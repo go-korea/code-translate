@@ -4,7 +4,7 @@ const { parse } = require('node-html-parser');
 const { Translate } = require('@google-cloud/translate').v2;
 
 // Your Google Cloud Platform project ID
-const projectId = 'hanquoc';
+const projectId = process.env.PROJECT_ID;
 const apiKey = process.env.API_KEY;
 const googleTranslate = new Translate({ projectId, key: apiKey });
 
