@@ -1,0 +1,14 @@
+{
+  "name": "gk-code-translate",
+  "version": "1.0.0",
+  "description": "Translate text in HTML code between languages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "GoKorea",
+  "license": "ISC",
+  "dependencies": {
+    "node-html-parser": "^6.1.13"
+  }
+}
