@@ -39,7 +39,7 @@ async function iterate(node) {
       console.log(node.rawText);
     }
   } else {
-    await node.childNodes.forEach(iterate);
+    await Promise.all(node.childNodes.map(iterate));
   }
 }
 
