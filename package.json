@@ -10,8 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@google-cloud/translate": "^8.2.0",
-    "@vitalets/google-translate-api": "^9.2.0",
-    "htmlparser2": "^9.1.0",
+    "dotenv": "^16.4.5",
     "node-html-parser": "^6.1.13"
   }
 }
