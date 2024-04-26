@@ -1,10 +1,12 @@
-const { parse } = require('node-html-parser');
+require('dotenv').config();
 const fs = require('fs');
+const { parse } = require('node-html-parser');
 const { Translate } = require('@google-cloud/translate').v2;
 
 // Your Google Cloud Platform project ID
 const projectId = 'hanquoc';
-const translate = new Translate({ projectId });
+const apiKey = process.env.API_KEY;
+const translate = new Translate({ projectId, key: apiKey });
 
 const targetLanguage = "en";
 
@@ -28,14 +30,8 @@ async function iterate(node) {
       // Translate the text to English
       node.rawText = await translate.translate(text, {
         to: targetLanguage
-      })
-      
-      // translate(text, { to: targetLanguage }).then(res => {
-      //   // Replace the original text with the translated text
-      //   node.rawText = res.text;
-      // }).catch(err => {
-      //   console.error(err);
-      // });
+      });
+      console.log(node.rawText);
     }
   } else {
     node.childNodes.forEach(iterate);
